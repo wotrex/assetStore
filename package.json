@@ -1,0 +1,57 @@
+{
+  "name": "my-app",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "node server.js",
+    "new": "ng serve --proxy-config proxy.conf.json",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "~12.0.0",
+    "@angular/cli": "^12.0.2",
+    "@angular/common": "~12.0.0",
+    "@angular/compiler": "~12.0.0",
+    "@angular/compiler-cli": "^12.0.2",
+    "@angular/core": "~12.0.0",
+    "@angular/forms": "~12.0.0",
+    "@angular/platform-browser": "~12.0.0",
+    "@angular/platform-browser-dynamic": "~12.0.0",
+    "@angular/router": "~12.0.0",
+    "@types/stripe-v3": "^3.1.24",
+    "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
+    "js-file-download": "^0.4.12",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "rxjs": "~6.6.0",
+    "stripe-angular": "^1.7.0",
+    "tslib": "^2.1.0",
+    "typescript": "~4.2.3",
+    "util": "^0.12.3",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.0.0",
+    "@angular/cli": "^12.0.2",
+    "@angular/compiler-cli": "^12.0.2",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "enhanced-resolve": "^3.3.0",
+    "jasmine-core": "~3.7.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "typescript": "~4.2.3"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm": "6.14.11"
+  }
+}

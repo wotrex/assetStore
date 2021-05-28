@@ -1,0 +1,21 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()" class="php-email-form">
+            <span>Войти в систему</span>
+            <div class="form-group col-md-6" >
+                <label>Username:</label>
+                <input type="username" formControlName="username" [ngClass] = "{'invalid': form.get('username').invalid && form.get('username').touched}">
+                <span *ngIf="form.get('username').invalid && form.get('username').touched">E-mail не указан или указан не правильно</span>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Пароль:</label>
+                <input type="password" formControlName="password">
+                <span *ngIf="form.get('password').invalid && form.get('password').touched">Пароль не может быть пустым</span>
+            </div>
+            <div class="text-center">
+                <button type = "submit" [disabled] = "form.invalid || form.disabled">Войти</button>
+                <span *ngIf="error">{{error}}</span>
+            </div>
+        </form>
+    </div>
+</section>

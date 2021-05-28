@@ -1,0 +1,31 @@
+<section id="hero" class="d-flex align-items-center">
+    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()" class="php-email-form">
+            <span>Создать аккаунт</span>
+            <div class="form-group col-md-6">
+                <label>Username:</label>
+                <input type="text" formControlName="username" [ngClass] = "{'invalid': form.get('email').invalid && form.get('email').touched}">
+                <span *ngIf="form.get('email').invalid && form.get('email').touched">
+                    <span *ngIf="form.get('username').errors['required']">Поле username не может быть пустым</span>
+                    <span *ngIf="form.get('username').errors['minlength'] && form.get('username').errors['minlength']['requiredLength']">
+                        Username не может быть меньше {{form.get('username').errors['minlength']['requiredLength']}} символов. Сейчас {{form.get('username').errors['minlength']['actualLength']}}
+                    </span>
+                </span>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Email:</label>
+                <input type="email" formControlName="email" [ngClass] = "{'invalid': form.get('email').invalid && form.get('email').touched}">
+                <span *ngIf="form.get('email').invalid && form.get('email').touched">E-mail не коректный</span>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Пароль:</label>
+                <input type="password" formControlName="password">
+                <span *ngIf="form.get('password').invalid && form.get('password').touched">Нужно указать минимум 6 символов</span>
+            </div>
+            <div class="text-center">
+                <button type = "submit" [disabled] = "form.invalid || form.disabled">Создать</button>
+                <span *ngIf="error">{{error}}</span>
+            </div>
+        </form>
+    </div>
+</section>
